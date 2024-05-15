@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th ="http://www.thymeleaf.org">
+
+<head th:replace="~{fragments/head :: head}">
+
+<body class="sub_page">
+
+  <div class="hero_area">
+    <header th:replace="~{fragments/header :: header}">
+  </div>
+
+  <!-- about section -->
+
+  <!--bootstrap nav bar start-->
+  <form action="/", method="get">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <span class="navbar-brand">Sort by: </span>
+        <ul class="navbar-nav">
+          <li class="nav-item active" style="padding-right: 20px;";>
+            <div class="dropdown">
+              <select class="form-select" aria-label="Default select example" name="sort_by">
+                <option value="createdAt">Created date</option>
+                <option value="updatedAt">Updated date</option>
+              </select>
+            </div>
+          </li>
+        </ul>
+
+        <span class="navbar-brand">Per page: </span>
+          <ul class="navbar-nav">
+            <li class="nav-item active" style="padding-right: 20px;">
+              <div class="dropdown">
+                <select class="form-select" aria-label="Default select example" name="per_page">
+                  <option selected value="2">2</option>
+                  <option value="5">5</option>
+                  <option value="10">10</option>
+                  <option value="15">15</option>
+                </select>
+              </div>
+            </li>
+
+            <li class="nav-item active" style="padding-left: 20px;">
+              <div class="input-group-prepend">
+                <button class="btn btn-primary" type="submit" id="dropdownMenuButton">
+                  Apply filter(s)
+                </button>
+              </div>
+            </li>
+          </ul>
+      
+    </nav>
+  </form>
+
+  <!--bootstrap nav bar end-->
+
+  <section class="about_section layout_padding">
+    <div class="container  ">
+      <div class="posts" th:each="post : ${posts}">
+        <h3> <a th:href="@{'/post/' +${post.postId}}" th:text="${post.title}">Title</a></h3>
+        <h5 th:text="'Author: ' + ${post.account.firstName} + 
+        ' | Created at: ' + ${#temporals.format(post.createdAt, 'yyyy-MM-dd HH:mm')} +
+        ' | Updated on: ' + ${#temporals.format(post.updatedOn, 'yyyy-MM-dd HH:mm')}" ></h5>
+        <p th:utext="${post.body}">body</p>
+        <hr color="grey"/>
+      </div>
+    </div>
+  </section>
+
+  <!-- end about section -->
+  <footer th:replace="~{fragments/footer :: footer}">
+
+
+
+</body>
+
+</html>

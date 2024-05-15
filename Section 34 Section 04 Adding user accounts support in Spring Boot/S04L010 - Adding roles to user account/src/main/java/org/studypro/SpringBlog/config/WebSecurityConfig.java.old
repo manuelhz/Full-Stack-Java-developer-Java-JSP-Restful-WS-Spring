@@ -1,0 +1,85 @@
+package org.studypro.SpringStarter.config;
+
+import org.springframework.context.annotation.Bean;
+
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.web.SecurityFilterChain;
+
+@EnableWebSecurity
+@EnableGlobalMethodSecurity(prePostEnabled = true, securedEnabled = true)
+public class WebSecurityConfig {
+	private static final String[] WHITELIST = {
+		"/",
+        "/login",
+        "/register",
+        "/db-console/**",
+        "/css/**",
+        "/fonts/**",
+        "/images/**",
+        "/js/**"
+    };
+
+	@Bean
+	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+		http
+		.authorizeRequests()
+		.antMatchers(WHITELIST)
+		.permitAll()
+		.anyRequest()
+		.authenticated();
+
+		return http.build();
+	}
+}
+
+/*
+ * 
+ * 
+ import static org.springframework.security.config.Customizer.withDefaults;
+private static final String[] WHITELIST = {
+		"/",
+        "/login",
+        "/register",
+        "/db-console/**",
+        "/css/**",
+        "/fonts/**",
+        "/images/**",
+        "/js/**"
+    };
+
+
+// todo: remove these after upgrading the db from infile db
+		http.csrf().disable();
+		http.headers().frameOptions().disable();
+
+
+
+
+    @Bean
+	@Order(1)                                                        
+	public SecurityFilterChain apiFilterChain(HttpSecurity http) throws Exception {
+		http
+			.securityMatcher(WHITELIST)                                   
+			.authorizeHttpRequests(authorize -> authorize
+				.anyRequest().hasRole("USER")
+			)
+			.httpBasic(withDefaults());
+		return http.build();
+	}
+
+    @Bean                                                            
+	public SecurityFilterChain formLoginFilterChain(HttpSecurity http) throws Exception {
+		http
+			.authorizeHttpRequests(authorize -> authorize
+				.anyRequest().authenticated()
+			)
+			.formLogin(withDefaults());
+		return http.build();
+	}
+
+
+
+ * 
+ */

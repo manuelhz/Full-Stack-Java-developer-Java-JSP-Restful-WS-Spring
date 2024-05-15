@@ -1,0 +1,40 @@
+Dependencies
+mvnrepository.com
+
+spring-webmvc
+spring-web
+spring-context
+spring-core
+spring-beans
+javax.servlet.jsp.jstl-api
+javax.servlet.jsp-api
+servlet-api
+
+
+
+17. Web MVC framework
+https://docs.spring.io/spring-framework/docs/3.2.x/spring-framework-reference/html/mvc.html
+
+
+spring-form jsp tag library
+https://docs.spring.io/spring-framework/docs/4.2.x/spring-framework-reference/html/spring-form-tld.html
+
+spring form taglib
+https://docs.spring.io/spring-framework/docs/3.2.x/spring-framework-reference/html/view.html
+
+
+tag libs
+<%@taglib prefix="c" uri="jakarta.tags.core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+
+installation of spring ide
+https://spring.io/blog/2022/06/14/goodbye-spring-ide-welcome-spring-tools-4
+
+aproaches of spring: 
+	model aproach, 
+	model and view aproach and 
+	model map.
+
+Adding Hibernate and mysql jars (maven)
+hibernate-core
+mysql-connector-j

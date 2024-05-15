@@ -1,0 +1,18 @@
+myVariable = (testCondition) ? someValue : anotherValue;
+where
+
+() holds the if
+? means then
+: means else
+
+It is the same as
+
+if (testCondition) {
+    myVariable = someValue;
+} else {
+    myVariable = anotherValue;
+}
+
+
+
+https://alvinalexander.com/java/edu/pj/pj010018/

@@ -1,0 +1,190 @@
+void: it doesn't return anything
+static: function accessible without an object
+public: any class can invoque it.
+
+
+int: 10,500
+float: 3.14f, 15.97f
+boolean: true, false
+String: "Sam", "Mat"
+
+
+float range is 1.40129846432481707e-45 to 3.40282346638528860e+38
+
+double range is 4.94065645841246544e-324d to 1.79769313486231570e+308d
+
+operators:
+Arithmetic Operators
++, -, *, /
+Relational Operators
+<,>,==, !=
+Logical Operators
+AND(&&) OR(||)
+
+Arrays in Java:
+
+public class Test {
+	public static void main(String[] args) {
+		char[] a = new char[5];
+		a[0] = 'a';
+		a[1] = 'b';
+		a[2] = 'c';
+		a[3] = 'd';
+		a[4] = 'e';
+		for(int i=0; i<5; i++) {
+			System.out.println(a[i]);
+		}
+	}
+}
+
+public class Test {
+	public static void main(String[] args) {
+		int[] a = new int[10];
+		for(int i=0; i<10; i++) {
+			a[i] = i;
+		}
+		for(int i=0; i<10; i++) {
+			System.out.println(a[i]);
+		}
+	}
+}
+
+Adding two arrays in Java:
+package test;
+public class Test {
+	public static void main(String[] args) {
+		int a[] = new int[5];
+		int b[] = new int[5];
+		int c[] = new int[5];
+		
+		int num = 5;
+		
+		for (int i=0; i<5; i++) {
+			a[i]=i;
+		}
+		for (int i=0; i<5; i++) {
+			b[i]=num;
+			++num;
+		}
+		System.out.print("Values of array A:");
+		for (int i=0; i<5; i++) {
+			System.out.print(a[i] + " ");
+		}
+		System.out.print("\nValues of array B:");
+		for (int i=0; i<5; i++) {
+			System.out.print(b[i] + " ");
+		}
+		for (int i=0; i<5; i++) {
+			c[i] = a[i] + b[i];
+		}
+		System.out.print("\nValues of array C:");
+		for (int i=0; i<5; i++) {
+			System.out.print(c[i] + " ");
+		}
+	}
+}
+
+Multi-Dimensional Array
+public class Test {
+	public static void main(String[] args) {
+		int a [][] = new int[3][3];
+		int num = 1;
+		for(int i=0; i<3; i++) {
+			for (int j=0; j<3; j++) {
+				a[i][j]=num;
+				num++;
+			}
+		}
+		for(int i=0; i<3; i++) {
+			for (int j=0; j<3; j++) {
+				System.out.print(a[i][j] + " ");
+			}
+			System.out.println();
+		}
+		
+	}
+}
+
+FUNCTIONS IN JAVA:
+
+package test;
+public class Test {
+	public static void sparta() {
+		System.out.println("This is sparta");
+	}
+
+	public static void add(int num1, int num2) {
+		System.out.println(num1 + num2);
+	}
+
+	public static void main(String[] args) {
+		sparta();
+		add(1, 2);		
+	}
+}
+
+package test;
+public class Test {
+	
+	public int add(int num1, int num2) {
+		int result = num1 + num2;
+		return result;
+	}
+	
+	public static void main(String[] args) {
+		Test obj = new Test();
+		int x=10;
+		int y=20;
+		int getResult=obj.add(x, y);
+		System.out.println(getResult);
+	}
+}
+
+Swapping Values:
+package test;
+public class Test {
+	
+public static void swapFunction(int a, int b) {
+	System.out.println("Before swapping, a = " + a + " b = " + b);
+	int c = a;
+	a = b;
+	b = c;
+	System.out.println("After swapping, a = " + a + " b = " + b);
+}
+	
+	public static void main(String[] args) {
+		swapFunction(1, 2);
+	}
+}
+
+Method Over-Loading
+
+Functions with same name but different parameters and return types.
+
+package test;
+public class Test {
+	public int area(int n1, int n2) {
+		int result = n1 * n2;
+		return result;
+	}
+	public float area(int n) {
+		float result = 3.14f*n*n;
+		return result;
+	}
+	
+	
+
+	
+	public static void main(String[] args) {
+		int x=10;
+		int y=20;
+		int r=5;
+		Test obj = new Test();
+		float areaCircle = obj.area(r);
+		int areaRectangle = obj.area(x, y);
+		
+		System.out.println("Area circle: " + areaCircle);
+		System.out.println("Area rectangle: " + areaRectangle);
+		
+	}
+}

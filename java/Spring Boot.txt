@@ -1,0 +1,27 @@
+https://start.spring.io/
+
+Extension Pack for Java
+Spring initializr:
+dependences:
+
+spring boot dev tools
+Lombok
+Spring Web
+thimeleaf
+spring data jpa
+h2 database
+
+
+https://www.thymeleaf.org/doc/tutorials/2.1/usingthymeleaf.html
+
+
+Spring Boot Restfull dependecies:
+
+Lombok
+Spring Web
+
+Spring BootLogging:
+https://docs.spring.io/spring-boot/docs/2.1.13.RELEASE/reference/html/boot-features-logging.html
+
+Spring Doc:
+https://springdoc.org/

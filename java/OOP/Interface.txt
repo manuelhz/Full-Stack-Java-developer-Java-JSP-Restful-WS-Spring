@@ -1,0 +1,2 @@
+An interface is used to group related methods with empty bodies.
+An abstract class can have concrete and abstract methods, but the interface can have only abstract methods.

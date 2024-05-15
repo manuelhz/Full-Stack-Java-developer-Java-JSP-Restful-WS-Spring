@@ -1,0 +1,13 @@
+What is a 32-bit signed integer?
+
+32-bit. This means that the number is represented by 32 separate one’s and zero’s. 32 bits of 2 possible states = 2^32=4,294,967,296 possible values.
+
+Integer meaning that only whole multiples of one are accepted.
+
+Signed meaning that negative values are accepted. This halves the number of possible positive values (roughly), so the largest number you can represent is 2^31–1=2,147,483,647, but instead of 0, the smallest number you can represent is -2,147,483,648. An unsigned 32-bit integer, by contrast, can represent anything from 0 to 4,294,967,295.
+
+
+
+It means that you have a 32 bit integer that can represent 31 bits of negative numbers and 31 bits of positive numbers. One bit is used to represent the sign of the rest of the value.
+
+int a[] = new int[100]; 

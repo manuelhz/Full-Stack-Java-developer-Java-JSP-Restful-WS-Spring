@@ -1,0 +1,133 @@
+mysql -u root -p
+123
+
+
+
+Sys-V init scripts located in /etc/init.d.
+
+Start:
+sudo /etc/init.d/mysql start
+
+Stop:
+sudo /etc/init.d/mysql stop
+
+Restart / reload configs:
+sudo /etc/init.d/mysql restart
+
+Check run status:
+sudo /etc/init.d/mysql status
+
+
+
+
+
+
+
+
+
+create database sunita;
+
+use sunita;
+create table login(uname varchar(20) primary key, password varchar(20));
+insert into login values('cscorner', 'unknown');
+select * from login;
+
+
+
+
+
+
+
+
+
+
+
+int NOT NULL AUTO_INCREMENT,
+    LastName varchar(255) NOT NULL,
+    FirstName varchar(255),
+    Age int,
+    PRIMARY KEY (Personid)
+
+
+
+create database study;
+use study;
+create table users(users_id int NOT NULL AUTO_INCREMENT primary key, username varchar(45) NOT NULL, email varchar(45));
+INSERT INTO users (username, email) VALUES ('manuel', 'manuel@admin.com');
+INSERT INTO users (username, email) VALUES ('admin', 'admin@admin.com');
+
+
+//create table with foreign key
+create table products (product_id int NOT NULL  primary key, brand_id int FOREIGN KEY REFERENCES brands(brand_Id), category varchar(45));
+
+//remove table from database:
+drop table users;
+
+//Remove all data from a table:
+truncate table files;
+
+//Alter table
+ALTER TABLE document MODIFY document_id INT AUTO_INCREMENT PRIMARY KEY
+ALTER TABLE users MODIFY user_id int NOT NULL AUTO_INCREMENT
+
+//drop a column in a table in MySQL 
+ALTER TABLE table_name DROP COLUMN column_name;
+ALTER TABLE brands DROP COLUMN brandId;
+
+create schema project;
+use project;
+create table users(user_id int NOT NULL  primary key, name varchar(45), email varchar(45));
+INSERT INTO users (user_id, name, email) VALUES (1, 'manuel', 'manuel@admin.com');
+INSERT INTO users (user_id, name, email) VALUES (2, 'admin', 'admin@admin.com');
+
+
+create table users(user_id int NOT NULL AUTO_INCREMENT primary key, username varchar(45), password varchar(45), first_name varchar(45),last_name varchar(45));
+show columns from users;
+INSERT INTO users (username, password, first_name, last_name) VALUES ('johbmckensy@admin.com', '123', 'john', 'Mckensy');
+INSERT INTO users (username, password, first_name, last_name) VALUES ('alexsterling@admin.com', 'abc', 'alex', 'Sterling');
+INSERT INTO users (username, password, first_name, last_name) VALUES ('manuhernandezg@admin.com', 'qwerty', 'Manu', 'Hernandez');
+INSERT INTO users (username, password, first_name, last_name) VALUES ('userName', 'password', 'firstName', 'lastName');
+
+show tables;
+show databases;
+describe [db_name.]table_name;
+
+
+create schema neon;
+create table users(user_id int NOT NULL AUTO_INCREMENT primary key, username varchar(45), password varchar(45), first_name varchar(45),last_name varchar(45));
+
+create table files(id int NOT NULL AUTO_INCREMENT primary key, file_name varchar(45) unique, label varchar(45), caption varchar(45));
+
+create schema project;
+use project;
+create table users(user_id int NOT NULL  primary key, name varchar(45), email varchar(45));
+
+create schema showroom;
+use showroom;
+create table brands(brand_Id int NOT NULL AUTO_INCREMENT primary key, brandName varchar(45) NOT NULL);
+INSERT INTO brands (brandName) VALUES ('Lamborghini');
+INSERT INTO brands (brandName) VALUES ('Porsche');
+INSERT INTO brands (brandName) VALUES ('Mercedes-Benz');
+INSERT INTO brands (brandName) VALUES ('Ducati');
+INSERT INTO brands (brandName) VALUES ('BMW');
+create table products (product_id int NOT NULL AUTO_INCREMENT primary key, product_name varchar(45), brand_id int, category varchar(45), cost varchar(45));
+create table products (product_id int NOT NULL AUTO_INCREMENT primary key, product_name varchar(45), brand_id int, category varchar(45)
+FOREIGN KEY (brand_Id) REFERENCES brands(brand_Id)
+on delete no action
+on update no action);
+
+INSERT INTO products (product_name, brand_id, category, cost) VALUES ('Aventador', 1, 'Super sport cars', '1000');
+INSERT INTO products (product_name, brand_id, category, cost) VALUES ('Huracan', 1, 'Super sport cars', '2000');
+INSERT INTO products (product_name, brand_id, category, cost) VALUES ('Urus', 1, 'Super sport cars', '3000');
+INSERT INTO products (product_name, brand_id, category, cost) VALUES ('Cayene', 2, 'Super sport cars', '4000');
+INSERT INTO products (product_name, brand_id, category, cost) VALUES ('Boxster', 2, 'Convertible', '5000');
+INSERT INTO products (product_name, brand_id, category, cost) VALUES ('C-Class', 3, 'Coupe', '6000');
+INSERT INTO products (product_name, brand_id, category, cost) VALUES ('EQS Saloon', 3, 'Luxury', '7000');
+INSERT INTO products (product_name, brand_id, category, cost) VALUES ('EQA', 3, 'Stylish', '8000');
+INSERT INTO products (product_name, brand_id, category, cost) VALUES ('Monster', 4, 'motorcycles', '9000');
+INSERT INTO products (product_name, brand_id, category, cost) VALUES ('Diavel', 4, 'motorcycles', '10000');
+INSERT INTO products (product_name, brand_id, category, cost) VALUES ('821', 4, 'motorcycles', '11000');
+INSERT INTO products (product_name, brand_id, category, cost) VALUES ('Scrambler', 4, 'motorcycles', '12000');
+INSERT INTO products (product_name, brand_id, category, cost) VALUES ('4 Series', 5, 'Convertible', '13000');
+INSERT INTO products (product_name, brand_id, category, cost) VALUES ('M3', 5, 'Convertible', '14000');
+INSERT INTO products (product_name, brand_id, category, cost) VALUES ('X1', 5, 'SUV', '15000');
